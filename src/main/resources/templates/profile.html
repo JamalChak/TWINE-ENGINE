@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - LustWave</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">LustWave</div>
+        <p>The Ultimate Content Sharing Platform</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+    <section>
+        <h2>Profile</h2>
+        <p><strong>Username:</strong> <span th:text="${user.username}"></span></p>
+        <p><strong>Email:</strong> <span th:text="${user.email}"></span></p>
+        <p><strong>Bio:</strong> <span th:text="${user.bio}"></span></p>
+        <h3>Your Content</h3>
+        <ul>
+            <li th:each="content : ${contents}">
+                <strong th:text="${content.title}"></strong>
+                <p th:text="${content.body}"></p>
+            </li>
+        </ul>
+    </section>
+    <footer>
+        <p>&copy; 2024 LustWave. All rights reserved.</p>
+    </footer>
+</body>
+</html>
